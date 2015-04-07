@@ -26,36 +26,7 @@ class MapViewer extends BuildHTML {
 		return self::$viewer_content;
 	}
 	
-	//format the select image content
-	/*function format_image_view($content, $img_viewer_attributes, $img_attributes) {
-	$img_content = self::$img_dir.$content;
-	$img_attributes["src"] = $img_content;
-	$img_start = BuildHTML::start_element(self::$div, $img_viewer_attributes);
-	$img = BuildHTML::start_element(self::$img, $img_attributes);
-	$img_end = BuildHTML::end_element(self::$div);
-	self::$viewer_content = $img_start.$img.$img_end;
-	}*/
-	
 	function format_map_view($content, $img_viewer_attributes, $img_attributes) {
-
-		/*
-		<script
-		src="http://maps.googleapis.com/maps/api/js">
-		</script>
-		<script>
-		function initialize() {
-		  var mapProp = {
-		    center:new google.maps.LatLng(51.508742,-0.120850),
-		    zoom:8,
-		    mapTypeId:google.maps.MapTypeId.ROADMAP
-		  };
-		  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
-		}
-		google.maps.event.addDomListener(window, 'load', initialize);
-		</script>
-
-		<div id="googleMap" style="width:500px;height:380px;"></div>
-		*/
 
 		$script_attributes = array(
 		    "src" => "http://maps.googleapis.com/maps/api/js",
