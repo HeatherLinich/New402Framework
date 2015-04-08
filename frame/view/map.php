@@ -1,32 +1,27 @@
 <?php
 /**
- * image.php - image viewer class for 402 framework
+ * map.php - map viewer class for 402 framework
  */
 
 require_once VIEW_DIR."html_builder.php";
 
-/**
- * load and initialise Image Viewer class for 402 framework
- */
 class MapViewer extends BuildHTML {
 
 	//formatted content
 	private static $viewer_content;
-	//framework images directory
-	private static $img_dir = MEDIA_IMAGES_DIR;
 	private static $div = "div";
-	private static $img = "img";
+	private static $map = "map";
 
 	/**
 	 * return the formatted image view content
 	 */
-	function get_viewer_content($content, $img_viewer_attributes, $img_attributes) {
-		$this->format_map_view($content, $img_viewer_attributes, $img_attributes);
+	function get_viewer_content($content, $map_viewer_attributes, $map_attributes) {
+		$this->format_map_view($content, $map_viewer_attributes, $map_attributes);
 	
 		return self::$viewer_content;
 	}
 	
-	function format_map_view($content, $img_viewer_attributes, $img_attributes) {
+	function format_map_view($content, $map_viewer_attributes, $map_attributes) {
 
 		$script_attributes = array(
 		    "src" => "http://maps.googleapis.com/maps/api/js",
